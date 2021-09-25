@@ -23,5 +23,4 @@ class codeRunner(Resource):
 api.add_resource(codeRunner,'/python')
 
 if __name__ == '__main__':
-    print("hi")
-    app.run(debug=True)
+    app.run(host = "0.0.0.0", debug=True)

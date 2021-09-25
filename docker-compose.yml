@@ -4,6 +4,6 @@ services:
     build: .
     command: python3 api.py
     ports:
-      - "5000:8080"
+      - "5000:5000"
     volumes:
       - .:/coderunner
