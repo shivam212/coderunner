@@ -18,7 +18,7 @@ class codeRunner(Resource):
         with open('code_to_run.py', mode='w') as f:
             f.write(code) 
         output = coderunnerPython(input) 
-        return {"args":args, "output":output}
+        return {"args":args, "output":output[1], "compile": output[0]}
 
 api.add_resource(codeRunner,'/python')
 
