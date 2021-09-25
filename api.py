@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_restful import reqparse, Resource, Api
-from runner import coderunner
+from runner import coderunnerPython
 
 app = Flask(__name__)
 api = Api(app)
@@ -17,11 +17,10 @@ class codeRunner(Resource):
         input = args['input']
         with open('code_to_run.py', mode='w') as f:
             f.write(code) 
-        output = coderunner(input) 
-        print(output)
+        output = coderunnerPython(input) 
         return {"args":args, "output":output}
 
-api.add_resource(codeRunner,'/')
+api.add_resource(codeRunner,'/python')
 
 if __name__ == '__main__':
     app.run(debug=True)
