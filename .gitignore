@@ -1,3 +1,5 @@
 code_to_run.py
 __pycache__/
 virtualenv/
+*.out
+*.cpp
