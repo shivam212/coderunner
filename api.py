@@ -18,7 +18,7 @@ class codeRunnerPython(Resource):
         with open('code_to_run.py', mode='w') as f:
             f.write(code) 
         output = coderunnerPython(input) 
-        return {"args":args, "output":output[1], "compile": output[0]}
+        return {"args":args, "output":output[1], "compile": output[0], "time":output[2]}
 
 class codeRunnerCPP(Resource):
     def get(self):
@@ -30,7 +30,7 @@ class codeRunnerCPP(Resource):
         with open('code_to_run.cpp', mode='w') as f:
             f.write(code) 
         output = coderunnerCPP(input) 
-        return {"args":args, "output":output[1], "compile": output[0]}
+        return {"args":args, "output":output[1], "compile": output[0], "time":output[2]}
  
 api.add_resource(codeRunnerPython,'/python')
 api.add_resource(codeRunnerCPP,'/cpp')
